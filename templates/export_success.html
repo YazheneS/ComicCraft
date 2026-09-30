@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comic Exported - ComicCraft</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+           font-family: "Segoe UI", Arial, sans-serif; background: #cfe8ff url('/static/img/background.svg') center/cover no-repeat; }
+    .card { background: rgba(255,255,255,.94); border-radius: 16px; padding: 36px 32px; max-width: 520px; text-align: center;
+            box-shadow: 0 8px 28px rgba(0,0,0,.25); margin: 16px; }
+    h1 { color: #2e7d32; margin-top: 0; }
+    .btn { display: inline-block; margin: 8px 4px 0; padding: 12px 24px; border-radius: 10px; background: #b3261e; color: #fff;
+           text-decoration: none; font-weight: 700; transition: .2s; }
+    .btn:hover { background: #8c1d18; }
+    .btn.alt { background: #444; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>&#10004; Comic exported successfully!</h1>
+    <p>Your AI-powered comic has been created and downloaded as a PDF. Save it, print it or share it with friends.</p>
+    {% if pdf_file %}<p><small>File: {{ pdf_file }}</small></p>
+    <a class="btn alt" href="/download/{{ pdf_file }}">Download again</a>{% endif %}
+    <a class="btn" href="/">Go Create Another Comic</a>
+  </div>
+</body>
+</html>
